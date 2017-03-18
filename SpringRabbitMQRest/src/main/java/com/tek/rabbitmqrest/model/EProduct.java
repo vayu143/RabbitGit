@@ -1,44 +1,32 @@
 package com.tek.rabbitmqrest.model;
 
-import java.io.Serializable;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class EProduct implements Serializable {
+public class EProduct{
 
-	private String productId;
-	private String productName;
-
-	public EProduct(String productId, String productName) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
+	private String id;
+	private String name;
+	public String getId() {
+		return id;
 	}
-
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public EProduct(String id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 	public EProduct() {
 		super();
 	}
 
-	public String getProductId() {
-		return productId;
-	}
-
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	@Override
-	public String toString() {
-		return "EProduct [productId=" + productId + ", productName=" + productName + "]";
-	}
-
+	
 }

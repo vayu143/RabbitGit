@@ -15,7 +15,7 @@ public class EProductController {
 	@Autowired
 	EProductService service;
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="/receive", method=RequestMethod.POST)
 	public void saveEProduct(@RequestBody EProduct eProduct) {
 	
 		System.out.println(eProduct);
