@@ -11,7 +11,7 @@ import com.rabbitmq.beans.Product;
 @Service
 public class MessageConvertingNSendingService {
 	
-private static final String SIMPLE_QUEUE = "tekgroupproducts";
+private static final String QUEUE = "tekgroupproducts";
 	
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
@@ -19,7 +19,7 @@ private static final String SIMPLE_QUEUE = "tekgroupproducts";
 	public void convertMessageNSend(Product product) throws JsonProcessingException{
 		ObjectMapper mapper=new ObjectMapper(); 
 		String msg= mapper.writeValueAsString(product);
-		rabbitTemplate.convertAndSend(SIMPLE_QUEUE, msg);
+		rabbitTemplate.convertAndSend(QUEUE, msg);
 	}
 
 }
